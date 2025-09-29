@@ -10,7 +10,7 @@ import { JwtService } from '@nestjs/jwt'
 import { verify } from 'argon2'
 import z from 'zod'
 import { PrismaService } from '@/infra/database/prisma/prisma.service'
-import { ZodValidationPipe } from '@/infra/http/controllers/pipes/zod-validation-pipe'
+import { ZodValidationPipe } from '@/infra/http/pipes/zod-validation-pipe'
 
 const authenticateBodySchema = z.object({
   email: z.email(),
