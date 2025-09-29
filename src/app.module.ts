@@ -6,6 +6,7 @@ import { AuthenticateController } from 'src/infra/http/controllers/authenticate.
 import { CreateAccountController } from 'src/infra/http/controllers/create-account.controller'
 import { PrismaService } from 'src/prisma/prisma.service'
 import { CreateQuestionController } from '@/infra/http/controllers/create-question.controller'
+import { FetchRecentsQuestionsController } from '@/infra/http/controllers/fetch-recents-questions.controller'
 
 @Module({
   imports: [
@@ -19,6 +20,7 @@ import { CreateQuestionController } from '@/infra/http/controllers/create-questi
     CreateAccountController,
     AuthenticateController,
     CreateQuestionController,
+    FetchRecentsQuestionsController,
   ],
   providers: [PrismaService],
 })
