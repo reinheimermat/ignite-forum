@@ -8,6 +8,6 @@ export class ArgonHasher implements HasherGenerator, HasherComparer {
   }
 
   compare(plain: string, hash: string): Promise<boolean> {
-    return verify(plain, hash)
+    return verify(hash, plain)
   }
 }

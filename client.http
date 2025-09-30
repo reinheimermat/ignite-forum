@@ -2,8 +2,8 @@ POST http://localhost:3333/accounts
 Content-Type: application/json
 
 {
-  "name": "Raimer",
-  "email": "raimer@example.com",
+  "name": "Matheus Reinheimer",
+  "email": "mreinheimer0@gmail.com",
   "password": "password123"
 }
 
@@ -13,6 +13,6 @@ POST http://localhost:3333/sessions
 Content-Type: application/json
 
 {
-  "email": "raimer@example.com",
+  "email": "mreinheimer0@gmail.com",
   "password": "password123"
 }
