@@ -1,8 +1,8 @@
 import { Module } from '@nestjs/common'
 import { ConfigModule } from '@nestjs/config'
 import { AuthModule } from '@/infra/auth/auth.module'
-import { envSchema } from '@/infra/env'
-import { EnvService } from '@/infra/env.service'
+import { envSchema } from '@/infra/env/env'
+import { EnvModule } from '@/infra/env/env.module'
 import { HttpModule } from '@/infra/http/http.module'
 
 @Module({
@@ -13,7 +13,7 @@ import { HttpModule } from '@/infra/http/http.module'
     }),
     AuthModule,
     HttpModule,
+    EnvModule,
   ],
-  providers: [EnvService],
 })
 export class AppModule {}
