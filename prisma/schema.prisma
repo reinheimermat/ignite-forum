@@ -42,8 +42,8 @@ model Question {
   bestAnswer Answer? @relation("bestAnswer", fields: [bestAnswerId], references: [id])
 
   answers     Answer[]
-  Comment     Comment[]
-  attachments Attchment[]
+  comments    Comment[]
+  attachments Attachment[]
 
   @@map("questions")
 }
@@ -56,11 +56,11 @@ model Answer {
   authorId   String    @map("author_id")
   questionId String    @map("question_id")
 
-  author       User        @relation(fields: [authorId], references: [id])
-  bestAnswerOn Question?   @relation("bestAnswer")
-  question     Question    @relation(fields: [questionId], references: [id])
+  author       User         @relation(fields: [authorId], references: [id])
+  bestAnswerOn Question?    @relation("bestAnswer")
+  question     Question     @relation(fields: [questionId], references: [id])
   comments     Comment[]
-  attachments  Attchment[]
+  attachments  Attachment[]
 
   @@map("answers")
 }
@@ -81,7 +81,7 @@ model Comment {
   @@map("comments")
 }
 
-model Attchment {
+model Attachment {
   id         String  @id @default(uuid())
   title      String
   url        String
