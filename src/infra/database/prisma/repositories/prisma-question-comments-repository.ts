@@ -1,15 +1,15 @@
 import { Injectable } from '@nestjs/common'
-import type { PrismaClient } from 'generated/prisma'
 import type { PaginationParams } from '@/core/repositories/pagination-params'
 import type { QuestionCommentsRepository } from '@/domain/forum/application/repositories/question-comments-repository'
 import type { QuestionComment } from '@/domain/forum/enterprise/entities/question-comment'
 import { PrismaQuestionCommentMapper } from '@/infra/database/prisma/mappers/prisma-question-comment-mapper'
+import { PrismaService } from '@/infra/database/prisma/prisma.service'
 
 @Injectable()
 export class PrismaQuestionCommentsRepository
   implements QuestionCommentsRepository
 {
-  constructor(private readonly prisma: PrismaClient) {}
+  constructor(private readonly prisma: PrismaService) {}
 
   async create(questionComment: QuestionComment): Promise<void> {
     const data = PrismaQuestionCommentMapper.toPrisma(questionComment)

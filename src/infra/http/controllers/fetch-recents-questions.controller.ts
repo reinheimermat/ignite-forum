@@ -32,7 +32,7 @@ export class FetchRecentsQuestionsController {
     const questions = result.value.questions
 
     return {
-      question: questions.map(QuestionPresenter.toHTTP),
+      questions: questions.map(QuestionPresenter.toHTTP),
     }
   }
 }

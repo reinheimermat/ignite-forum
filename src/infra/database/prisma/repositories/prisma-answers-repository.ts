@@ -1,13 +1,13 @@
 import { Injectable } from '@nestjs/common'
-import type { PrismaClient } from 'generated/prisma'
 import type { PaginationParams } from '@/core/repositories/pagination-params'
 import type { AnswersRepository } from '@/domain/forum/application/repositories/answers-repository'
 import type { Answer } from '@/domain/forum/enterprise/entities/answer'
 import { PrismaAnswerMapper } from '@/infra/database/prisma/mappers/prisma-answer-mapper'
+import { PrismaService } from '@/infra/database/prisma/prisma.service'
 
 @Injectable()
 export class PrismaAnswersRepository implements AnswersRepository {
-  constructor(private readonly prisma: PrismaClient) {}
+  constructor(private readonly prisma: PrismaService) {}
 
   async create(answer: Answer): Promise<void> {
     const data = PrismaAnswerMapper.toPrisma(answer)
